@@ -10,7 +10,7 @@ dotenv.config({
 })
 
 const app = e();
-app.use(cors())
+app.use(cors({origin: process.env.ORIGIN, credentials: true}));
 app.use(e.json());
 
 connectDB();
